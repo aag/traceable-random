@@ -15,7 +15,7 @@ public class TimeProvider implements SeedProvider {
     }
 
     @Override
-    public SeedValue getCurrentSeed() {
+    public SeedValue getCurrentSeedValue() {
         LocalDateTime dt = LocalDateTime.now(clock);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 

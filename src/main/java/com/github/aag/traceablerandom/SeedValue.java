@@ -24,7 +24,7 @@ public class SeedValue {
         return seedText;
     }
 
-    public LocalDateTime getRetrievalDateTime() {
+    public LocalDateTime getSeedCreationDateTime() {
         return retrievalDateTime;
     }
 

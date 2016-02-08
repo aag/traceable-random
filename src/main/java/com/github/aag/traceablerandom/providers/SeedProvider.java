@@ -4,5 +4,5 @@ import com.github.aag.traceablerandom.SeedValue;
 
 public interface SeedProvider
 {
-    SeedValue getCurrentSeed();
+    SeedValue getCurrentSeedValue();
 }

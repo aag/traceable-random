@@ -11,13 +11,12 @@ import java.time.ZoneId;
 import static org.junit.Assert.assertEquals;
 
 public class TimeProviderTest {
-
     @Test
     public void testGetCurrentSeedText() {
         Clock clock = Clock.fixed(Instant.ofEpochSecond(1454760000, 0), ZoneId.systemDefault());
 
         TimeProvider provider = new TimeProvider(clock);
-        SeedValue val = provider.getCurrentSeed();
+        SeedValue val = provider.getCurrentSeedValue();
 
         assertEquals("2016-02-06 13:00:00", val.getSeedText());
     }
@@ -27,7 +26,7 @@ public class TimeProviderTest {
         Clock clock = Clock.fixed(Instant.ofEpochSecond(1454760000, 0), ZoneId.systemDefault());
 
         TimeProvider provider = new TimeProvider(clock);
-        SeedValue val = provider.getCurrentSeed();
+        SeedValue val = provider.getCurrentSeedValue();
 
         assertEquals(-310677989, val.getSeed());
     }

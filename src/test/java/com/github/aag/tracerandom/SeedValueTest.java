@@ -22,7 +22,7 @@ public class SeedValueTest {
         LocalDateTime dt = LocalDateTime.of(2016, 02, 06, 12, 00);
         SeedValue val = new SeedValue("test data", dt);
 
-        assertEquals(dt, val.getRetrievalDateTime());
+        assertEquals(dt, val.getSeedCreationDateTime());
     }
 
     @Test
