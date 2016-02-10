@@ -33,4 +33,24 @@ public class TraceableRandomTest {
         TraceableRandom traceableRandom = new TraceableRandom(mockProvider);
         assertEquals(LocalDateTime.of(2016, 02, 03, 04, 05), traceableRandom.getSeedCreationDateTime());
     }
+
+    @Test
+    public void testGetRandom() {
+        // Make sure 2 Randoms with the same seed generate the same number back
+        SeedValue seedValue1 = new SeedValue("test seed", LocalDateTime.of(2016, 02, 03, 04, 05));
+
+        SeedProvider mockProvider1 = mock(SeedProvider.class);
+        when(mockProvider1.getCurrentSeedValue()).thenReturn(seedValue1);
+
+        TraceableRandom traceableRandom1 = new TraceableRandom(mockProvider1);
+
+        SeedValue seedValue2 = new SeedValue("test seed", LocalDateTime.of(2016, 02, 03, 04, 05));
+
+        SeedProvider mockProvider2 = mock(SeedProvider.class);
+        when(mockProvider2.getCurrentSeedValue()).thenReturn(seedValue2);
+
+        TraceableRandom traceableRandom2 = new TraceableRandom(mockProvider2);
+
+        assertEquals(traceableRandom1.getRandom().nextInt(), traceableRandom2.getRandom().nextInt());
+    }
 }
