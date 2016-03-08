@@ -34,7 +34,7 @@ public class WeatherProviderTest {
         WeatherProvider provider = new WeatherProvider(mockProvider);
         SeedValue val = provider.getCurrentSeedValue();
 
-        assertEquals("overcast clouds, 65°F", val.getSeedText());
+        assertEquals("partly cloudy, 65°F", val.getSeedText());
     }
 
 }
