@@ -27,8 +27,8 @@ public class HttpOpenWeatherMapDataSource implements WeatherDataSource {
     private String summary;
 
     /**
-     * @param apiKey An API key from the OpenWeatherMap website.
-     * @param units The units of measure for the temperature.
+     * @param apiKey   An API key from the OpenWeatherMap website.
+     * @param units    The units of measure for the temperature.
      * @param location A location string for the API. Examples: "London,uk" or "Berlin,de".
      */
     public HttpOpenWeatherMapDataSource(
@@ -54,7 +54,7 @@ public class HttpOpenWeatherMapDataSource implements WeatherDataSource {
                     .asJson();
 
             JSONObject responseJson = response.getBody().getObject();
-            
+
             double temp = responseJson.getJSONObject("main")
                     .getDouble("temp");
             this.temperature = (int) Math.round(temp);

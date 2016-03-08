@@ -2,7 +2,6 @@ package com.github.aag.traceablerandom.providers;
 
 import com.github.aag.traceablerandom.SeedValue;
 
-public interface SeedProvider
-{
+public interface SeedProvider {
     SeedValue getCurrentSeedValue();
 }

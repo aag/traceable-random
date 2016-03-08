@@ -3,9 +3,6 @@ package com.github.aag.traceablerandom.providers;
 import com.github.aag.traceablerandom.SeedValue;
 import com.github.aag.traceablerandom.datasources.WeatherDataSource;
 
-import java.time.Clock;
-import java.time.LocalDateTime;
-
 public class WeatherProvider implements SeedProvider {
 
     private WeatherDataSource dataSource;
