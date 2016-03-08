@@ -38,19 +38,4 @@ public class WeatherProvider implements SeedProvider {
 
         return unitsString;
     }
-
-    private String formatTemperature(double temp, WeatherDataSource.Units units) {
-        String tempString;
-
-        switch (units) {
-            case FAHRENHEIGHT:
-                tempString = String.valueOf(Math.round(temp));
-                break;
-            default:
-                tempString = String.format("%.1f", temp);
-                break;
-        }
-
-        return tempString;
-    }
 }
