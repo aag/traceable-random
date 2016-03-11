@@ -38,6 +38,9 @@ Seed Providers
 The Time provider seeds the RNG with the date and time.
 
 ```java
+import com.github.aag.traceablerandom.TraceableRandom;
+import com.github.aag.traceablerandom.providers.TimeProvider;
+
 TimeProvider provider = new TimeProvider(Clock.systemDefaultZone());
 TraceableRandom traceableRandom = new TraceableRandom(provider);
 
@@ -54,6 +57,12 @@ if you want to use it. Once you have created an account and you have
 an API key, you can use the Weather Provider like this:
 
 ```java
+import com.github.aag.traceablerandom.TraceableRandom;
+import com.github.aag.traceablerandom.datasources.HttpOpenWeatherMapDataSource;
+import com.github.aag.traceablerandom.providers.WeatherProvider;
+
+import java.time.LocalDateTime;
+
 HttpOpenWeatherMapDataSource weatherSource = new HttpOpenWeatherMapDataSource(
     "104c549becf3af34b43ab37d2a48013c",
     WeatherDataSource.Units.CELSIUS,
