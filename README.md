@@ -79,7 +79,7 @@ LocalDateTime weatherTime = traceableRandom.getSeedCreationDateTime();
 
 Tests
 -----
-The tests can be run with `gradle test`.
+The tests can be run with `./gradlew test`.
 
 License
 -------
